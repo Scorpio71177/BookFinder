@@ -4,48 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Search</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
-
-    <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
-        <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
-
-        <!-- User Form -->
-        <form id="userForm" class="space-y-4">
-            <div>
-                <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
-                <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            </div>
-
-            <div>
-                <label for="lastName" class="block text-lg font-medium text-gray-700">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            </div>
-
-            <div>
-                <label for="interest" class="block text-lg font-medium text-gray-700">Book Genres:</label>
-                <select id="interest" name="interest" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-                    <option value="" disabled selected>Select an interest</option>
-                    <option value="fiction">Fiction</option>
-                    <option value="non-fiction">Non-Fiction</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="biography">Biography</option>
-                </select>
-            </div>
-
-            <div class="text-center">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                    Search Books
-                </button>
-            </div>
-        </form>
-
-        <!-- Search Results -->
-        <h2 class="text-2xl font-semibold text-gray-700 mt-8">Search Results</h2>
-        <div id="results" class="mt-4 space-y-4"></div>
-    </div>
-
-    <script src="assets/script.js"></script>
-</body>
-</html>
+        <!-- Link to include the Tailwind CSS framework for styling -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <!-- Container for the main content, centered on the page -->
+        <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
+            <!-- Heading for the book search section -->
+            <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
+    
+            <!-- User Form section for input fields -->
+            <form id="userForm" class="space-y-4">
+                <!-- Input field for the user's first name -->
+                <div>
+                    <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+    
+                <!-- Input field for the user's last name -->
+                <div>
+                    <label for="lastName" class="block text-lg font-medium text-gray-700">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+    
+                <!-- Dropdown menu for selecting book genres -->
+                <div>
+                    <label for="interest" class="block text-lg font-medium text-gray-700">Book Genres:</label>
+                    <select id="interest" name="interest" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <option value="" disabled selected>Select an interest</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="biography">Biography</option>
+                    </select>
+                </div>
+    
+                <!-- Button to submit the form for searching books -->
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                        Search Books
+                    </button>
+                </div>
+            </form>
+    
+            <!-- Heading for displaying search results -->
+            <h2 class="text-2xl font-semibold text-gray-700 mt-8">Search Results</h2>
+            <!-- Container for displaying search results -->
+            <div id="results" class="mt-4 space-y-4"></div>
+        </div>
+    
+        <!-- Script tag to include the JavaScript file for functionality -->
+        <script src="assets/script.js"></script>
+    </body>
+    </html>
