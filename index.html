@@ -1,46 +1,76 @@
-<!-- Set the title of the webpage to "Book Search" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search</title>
+    <!-- Link to Tailwind CSS for styling the page -->
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<!-- Link to the Tailwind CSS framework for styling -->
 </head>
 
+<!-- Body of the page with a background color and center alignment using Tailwind CSS -->
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
-<!-- Start of the body with styling classes for background color and layout -->
 
-<div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
-<!-- Container div with styling for layout and appearance -->
+    <!-- Main container for the content with padding, white background, and shadow effects -->
+    <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
 
-    <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
-    <!-- Heading for the page title with styling -->
+        <!-- Title of the page, styled with large text and centered alignment -->
+        <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
 
-    <!-- User Form -->
-    <form id="userForm" class="space-y-4">
-    <!-- Form element with an ID and spacing between elements -->
+        <!-- User input form for collecting search data, with vertical spacing between elements -->
+        <form id="userForm" class="space-y-4">
 
-        <div>
-            <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
-            <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            <!-- Input field for the user's first name with styling -->
-        </div>
+            <!-- First Name input field -->
+            <div>
+                <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
+                <!-- Text input styled with padding, border, and focus effects using Tailwind CSS -->
+                <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
 
-        <!-- Additional form elements for last name, age, and book genres -->
+            <!-- Last Name input field -->
+            <div>
+                <label for="lastName" class="block text-lg font-medium text-gray-700">Last Name:</label>
+                <!-- Text input styled with padding, border, and focus effects -->
+                <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
 
-        <div class="text-center">
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                Search Books
-            </button>
-            <!-- Submit button for searching books with styling -->
-        </div>
-    </form>
+            <!-- Age input field -->
+            <div>
+                <label for="age" class="block text-lg font-medium text-gray-700">Age:</label>
+                <!-- Number input field for entering age, styled similarly to text inputs -->
+                <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
 
-    <!-- Search Results Section -->
-    <h2 class="text-2xl font-semibold text-gray-700 mt-8">Search Results</h2>
-    <!-- Heading for the search results section -->
+            <!-- Book genre selection dropdown -->
+            <div>
+                <label for="interest" class="block text-lg font-medium text-gray-700">Book Genres:</label>
+                <!-- Dropdown menu for selecting book genre, styled with padding, border, and focus effects -->
+                <select id="interest" name="interest" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                    <!-- Placeholder option that is disabled and selected by default -->
+                    <option value="" disabled selected>Select an interest</option>
+                    <!-- Genre options for the user to choose from -->
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="biography">Biography</option>
+                </select>
+            </div>
 
-    <div id="results" class="mt-4 space-y-4"></div>
-    <!-- Container for displaying search results with spacing between items -->
-</div>
+            <!-- Submit button to trigger the search, with hover effects and transition animations -->
+            <div class="text-center">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                    Search Books
+                </button>
+            </div>
+        </form>
 
-<script src="assets/script.js"></script>
-<!-- Link to the JavaScript file for handling form submission and displaying results -->
+        <!-- Section for displaying search results after the form is submitted -->
+        <h2 class="text-2xl font-semibold text-gray-700 mt-8">Search Results</h2>
+        <!-- Results container with vertical spacing between book items -->
+        <div id="results" class="mt-4 space-y-4"></div>
+    </div>
+
+    <!-- Link to the JavaScript file containing the functionality for handling the form submission and displaying results -->
+    <script src="assets/script.js"></script>
 </body>
 </html>
