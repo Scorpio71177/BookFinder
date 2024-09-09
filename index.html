@@ -1,76 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Declares the document type as HTML5 -->
     <meta charset="UTF-8">
+    <!-- Sets the viewport to ensure proper scaling on different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sets the page title -->
     <title>Book Search</title>
-    <!-- Link to Tailwind CSS for styling the page -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to Tailwind CSS for styling the page using a CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<!-- Body of the page with a background color and center alignment using Tailwind CSS -->
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Main body styling with Tailwind for a centered layout and background color -->
 
-    <!-- Main container for the content with padding, white background, and shadow effects -->
-    <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
+    <main class="container mx-auto p-8 bg-white shadow-lg rounded-lg">
+        <!-- Main container for the page content with padding, background, shadow, and rounded corners -->
+        
+        <header>
+            <!-- Header section containing the title -->
+            <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
+            <!-- Title styled with Tailwind classes: large font size, bold text, centered, blue color, and bottom margin -->
+        </header>
 
-        <!-- Title of the page, styled with large text and centered alignment -->
-        <h1 class="text-4xl font-bold text-center text-blue-600 mb-6">Book Search</h1>
+        <!-- Book search form, with spaced elements -->
+        <form id="userForm" class="space-y-4" aria-labelledby="book-search-form">
+            <!-- A form to capture user information, with vertical spacing between elements -->
 
-        <!-- User input form for collecting search data, with vertical spacing between elements -->
-        <form id="userForm" class="space-y-4">
+            <fieldset>
+                <!-- Groups related input fields for accessibility -->
+                <legend class="sr-only" id="book-search-form">User Information</legend>
+                <!-- Hidden legend for screen readers to indicate the purpose of the form -->
 
-            <!-- First Name input field -->
-            <div>
-                <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
-                <!-- Text input styled with padding, border, and focus effects using Tailwind CSS -->
-                <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            </div>
+                <div>
+                    <!-- Input for the user's first name -->
+                    <label for="firstName" class="block text-lg font-medium text-gray-700">First Name:</label>
+                    <!-- Label associated with the firstName input field -->
+                    <input type="text" id="firstName" name="firstName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                    <!-- Text input for first name with Tailwind styling for padding, border, and focus effects -->
+                </div>
 
-            <!-- Last Name input field -->
-            <div>
-                <label for="lastName" class="block text-lg font-medium text-gray-700">Last Name:</label>
-                <!-- Text input styled with padding, border, and focus effects -->
-                <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            </div>
+                <div>
+                    <!-- Input for the user's last name -->
+                    <label for="lastName" class="block text-lg font-medium text-gray-700">Last Name:</label>
+                    <!-- Label associated with the lastName input field -->
+                    <input type="text" id="lastName" name="lastName" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                    <!-- Text input for last name with similar styling to first name input -->
+                </div>
 
-            <!-- Age input field -->
-            <div>
-                <label for="age" class="block text-lg font-medium text-gray-700">Age:</label>
-                <!-- Number input field for entering age, styled similarly to text inputs -->
-                <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-            </div>
+                <div>
+                    <!-- Input for the user's age -->
+                    <label for="age" class="block text-lg font-medium text-gray-700">Age:</label>
+                    <!-- Label associated with the age input field -->
+                    <input type="number" id="age" name="age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                    <!-- Number input for age with styling similar to the text inputs -->
+                </div>
 
-            <!-- Book genre selection dropdown -->
-            <div>
-                <label for="interest" class="block text-lg font-medium text-gray-700">Book Genres:</label>
-                <!-- Dropdown menu for selecting book genre, styled with padding, border, and focus effects -->
-                <select id="interest" name="interest" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
-                    <!-- Placeholder option that is disabled and selected by default -->
-                    <option value="" disabled selected>Select an interest</option>
-                    <!-- Genre options for the user to choose from -->
-                    <option value="fiction">Fiction</option>
-                    <option value="non-fiction">Non-Fiction</option>
-                    <option value="fantasy">Fantasy</option>
-                    <option value="biography">Biography</option>
-                </select>
-            </div>
+                <div>
+                    <!-- Dropdown for the user's preferred book genre -->
+                    <label for="interest" class="block text-lg font-medium text-gray-700">Book Genres:</label>
+                    <!-- Label associated with the interest dropdown -->
+                    <select id="interest" name="interest" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" required>
+                        <!-- Dropdown for selecting the genre with default disabled option -->
+                        <option value="" disabled selected>Select an interest</option>
+                        <!-- Option for fiction books -->
+                        <option value="fiction">Fiction</option>
+                        <!-- Option for non-fiction books -->
+                        <option value="non-fiction">Non-Fiction</option>
+                        <!-- Option for fantasy books -->
+                        <option value="fantasy">Fantasy</option>
+                        <!-- Option for biography books -->
+                        <option value="biography">Biography</option>
+                    </select>
+                    <!-- The dropdown element with Tailwind styling for padding, borders, and focus effects -->
+                </div>
 
-            <!-- Submit button to trigger the search, with hover effects and transition animations -->
-            <div class="text-center">
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
-                    Search Books
-                </button>
-            </div>
+                <div class="text-center">
+                    <!-- Submit button for the form -->
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-blue-700 transition duration-300 ease-in-out">
+                        Search Books
+                    </button>
+                    <!-- Button styled with Tailwind for background, padding, border radius, shadow, and hover effects -->
+                </div>
+            </fieldset>
         </form>
 
-        <!-- Section for displaying search results after the form is submitted -->
-        <h2 class="text-2xl font-semibold text-gray-700 mt-8">Search Results</h2>
-        <!-- Results container with vertical spacing between book items -->
-        <div id="results" class="mt-4 space-y-4"></div>
-    </div>
+        <section aria-labelledby="search-results">
+            <!-- Section to display search results dynamically -->
+            <h2 class="text-2xl font-semibold text-gray-700 mt-8" id="search-results">Search Results</h2>
+            <!-- Heading for the search results section -->
+            <div id="results" class="mt-4 space-y-4"></div>
+            <!-- Div where the search results will be dynamically inserted, with vertical spacing between results -->
+        </section>
+    </main>
 
-    <!-- Link to the JavaScript file containing the functionality for handling the form submission and displaying results -->
+    <!-- Link to the external JavaScript file for handling form submission and book fetching -->
     <script src="assets/script.js"></script>
 </body>
 </html>
